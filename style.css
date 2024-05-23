@@ -1,0 +1,777 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scrollbar-width: thin;
+    font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+    /* scroll-behavior: smooth; */
+}
+
+/* page-1 starting */
+
+#page-1 {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000000;
+}
+
+#page-1 .logo{
+    width:150px;
+    height: max-content;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    animation:enlarge 1.35s linear forwards;
+    animation-delay: 1.5s;
+    z-index: 1;
+}
+
+#page-1 .logo .brush1{
+    width:50px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    position: relative;
+    animation: height 0.5s ease forwards;
+    animation-delay:3.25s;
+}
+
+#page-1 .logo .brush1 .color1{
+    height: 100%;
+    width: 100%;
+    background-color:rgb(229,9,20);
+    position: relative;
+    z-index: 2;
+    animation:moveup 0.3s ease forwards 0.5s, see 0 ease forwards;
+}
+
+#page-1 .logo .brush2{
+    width: 50px;
+    height: 220px;
+    display: flex;
+    align-items: flex-end;
+}
+
+#page-1 .logo .brush2 .color2{
+    width: 100%;
+    height: 100%;
+    background-color:rgb(299,9,20);
+    animation: moveup 0.3s ease forwards 1.2s;
+}
+
+#page-1 .logo .brush3{
+    width: 50px;
+    height: 220px;
+    z-index: 2;
+    position: absolute;
+    transform: skew(24.4deg);
+    transform-origin: top left;
+    background:rgb(229,9,20);
+    box-shadow: 0 0 20px rgba(0,0,0,0.33);
+    animation:moveup 0.3s ease forwards 0.85s;
+}
+
+.lines{
+    width: max-content;
+    height: 100%;
+    display:none;
+    justify-content: space-evenly;
+    position: absolute;
+    z-index: 0;
+}
+
+.lines .line{
+    width: 1px;
+    height: 100%;
+    background-color:rgb(229,9,20);
+    margin-right: 1px;
+    animation: margin 2s linear forwards, bgcolor 0.2s linear forwards;
+    animation-delay: 0.2s;
+}
+
+/* for the bottom curvature */
+.box{
+    height:5%;
+    width:15%;
+    border-radius: 50%;
+    background-color: #000;
+    position: absolute;
+    top:481px;
+    z-index:5;
+    animation: enlarge 1.35s linear 1.5s forwards, down 1.35s linear 1.5s forwards;
+}
+
+/* froward animation here */
+@keyframes moveup {
+    from{
+        height: 0;
+    }to{
+        height: 220px;
+    }
+}
+
+/* reverse animation here */
+@keyframes movedown {
+    from{
+        height: 220px;
+    }to{
+        height: 0;
+    }
+}
+
+/* main animation here */
+
+@keyframes opacity {
+    0%{
+        opacity: 1;
+    }100%{
+        opacity: 0;
+    }
+}
+
+@keyframes margin {
+    0%{
+        width:1px;
+        margin-right: 1px;
+        box-shadow: none;
+    }100%{
+        width:5px;
+        margin-right: var(--m);
+        box-shadow: 0 0 5px rgb(172,172,172), 0 0 50px var(--c);
+    }
+}
+
+@keyframes bgcolor {
+    0%{
+        background:red;
+    }30%{
+        background: radial-gradient(circle, rgba(255,0,0,1) 75%, rgba(0,0,0,0.545) 100%);
+    }100%{
+        background: var(--c);
+    }
+}
+
+@keyframes height {
+    0%{
+        width:50px;
+        height: 220px;
+    }100%{
+        width: max-content;
+        height:74vh;
+    }
+}
+
+/* animation for the curvature */
+@keyframes enlarge {
+    from{
+        transform: scale(1,1);
+    }to{
+        transform: scale(1.15,1.25);
+    }
+}
+
+@keyframes down {
+    from{
+        top:481px;
+    }to{
+        top:512px;
+    }
+}
+
+@keyframes remo {
+    from{
+        opacity: 1;
+    }to{
+        opacity: 0;
+    }
+}
+
+/* page-2 starting */
+
+#page-2 {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    background-image: url('./pixelcut-export.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+
+}
+
+#page-2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 60%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+#page-2 header {
+    height: 10%;
+    width: 100%;
+    display: flex;
+}
+
+#left1 {
+    height: 100%;
+    width: 50%;
+}
+
+#left1 img {
+    height: auto;
+    width: 16.5%;
+    position: relative;
+    right: -23%;
+}
+
+#right1 {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#right1 select {
+    height: 32px;
+    width: 122px;
+    position: relative;
+    right: -48%;
+    text-align: center;
+    background: none;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#right1 select:focus {
+    background-color: #fff;
+    color: #000;
+}
+
+
+#right1 input {
+    height: 32px;
+    width: 76px;
+    position: relative;
+    right: -50%;
+    background: rgb(299, 9, 20);
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#page-2 main {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#page-2 main h3 {
+    color: #fff;
+    font-size: 60px;
+    font-weight: bolder;
+}
+
+
+#page-2 main p {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin: 15px;
+}
+
+#page-2 main div {
+    margin-top: 5px;
+    display: flex;
+    gap: 7px;
+}
+
+#input-box {
+    min-height: 56px;
+    min-width: 375px;
+    position: relative;
+}
+
+#input-box #email {
+    height: 56px;
+    width: 375px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 17px;
+    font-size: 15px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#input-box #email:focus,
+#input-box #email:valid {
+    border-color: #fff;
+}
+
+#input-box label {
+    position: absolute;
+    top: 30%;
+    color: #fff;
+    left: 5%;
+    font-size: 17px;
+    opacity: 0.9;
+    transition: 0.5s ease;
+}
+
+#input-box #email:focus~label,
+#input-box #email:valid~label {
+    top: 15%;
+    font-size: 13px;
+}
+
+#page-2 #get-started {
+    width: 203px;
+    height: 56px;
+    color: #fff;
+    background: rgb(299, 9, 20);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+    position: relative;
+    top: 5px;
+}
+
+#page-2 #get-started:disabled{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+#get-started ion-icon {
+    font-size: 25px;
+    position: relative;
+    top: 3px
+}
+
+/* page-3 starting */
+
+#pages {
+    height:450vh;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.83);
+    position: relative;
+    display:none;
+}
+
+/* page-3 starting box1 */
+
+#box1 {
+    height: 505.3px;
+    width: 100%;
+    background: #000000;
+    position: absolute;
+    top: 0.2%;
+    display: flex;
+}
+
+#box1 .left {
+    height:100%;
+    width:50%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+#box1 .left h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 15px;
+    position: relative;
+    left: -10px;
+}
+
+#box1 .left p {
+    font-size: 24px;
+    color: #fff;
+    position: relative;
+    right: -75px;
+}
+
+#box1 .right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#box1 .right img {
+    width: 534px;
+    height: 400px;
+    z-index: 1;
+}
+
+#box1 .right video {
+    position: absolute;
+    width: 389px;
+    height: 220px;
+    top:130px;
+    right:303px;
+}
+
+/* page-3 starting box2 */
+
+#box2 {
+    height: 505.3px;
+    width: 100%;
+    background:#000000;
+    position: absolute;
+    top:15.45%;
+    display: flex;
+}
+
+#box2 .right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box2 .right h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 15px;
+    position: relative;
+    left:-100px
+}
+
+#box2 .right p {
+    font-size: 24px;
+    color: #fff;
+    position: relative;
+    left:-90px
+}
+
+
+#box2 .left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    position: relative;
+}
+
+#box2 .left #mobile{
+    width: auto;
+    height: 80%;
+    position:absolute;
+}
+
+#box2 .left .div{
+    height:85.4px;
+    width:40%;
+    border:2px solid rgba(255, 255, 255, 0.3);
+    border-radius:5px;
+    background:#000000;
+    color: #fff;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    left:340px;
+    top:340px;
+    gap:15px;
+    padding-left:15px;
+}
+
+#box2 .left #boxshot{
+    height:64px;
+    width: auto;
+}
+
+#box2 .left .texttt p{
+    color:blue;
+}
+
+#box2 .left .div #phone{
+    font-size:27px;
+    color:blue;
+    position: relative;
+    right:-35px;
+}
+
+#box2 .left #checkmark{
+    color:blue;
+    font-size:10px;
+    position: relative;
+    right:-2px;
+}
+
+/* page-3 starting box3 */
+
+#box3 {
+    height: 505.3px;
+    width: 100%;
+    background:#000000;
+    position: absolute;
+    top:30.7%;
+    display: flex;
+}
+
+#box3 .left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#box3 .left h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 15px;
+    position: relative;
+    left:13px;
+}
+
+#box3 .left p {
+    font-size: 24px;
+    color: #fff;
+    position: relative;
+    right:-60px;
+}
+
+#box3 .right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+#box3 .right img {
+    width: 534px;
+    height: 400px;
+    z-index: 1;
+}
+
+#box3 .right video {
+    position: absolute;
+    width:330px;
+    height:200px;
+    top:75px;
+    right:330px;
+}
+
+/* page-3 starting box4 */
+
+#box4 {
+    height: 505.3px;
+    width: 100%;
+    background:#000000;
+    position: absolute;
+    top:45.95%;
+    display: flex;
+}
+
+#box4 .right {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+}
+
+#box4 .right h1 {
+    font-size: 48px;
+    color: #fff;
+    margin-bottom: 15px;
+    position: relative;
+
+}
+
+#box4 .right p {
+    font-size: 24px;
+    color: #fff;
+    position: relative;
+
+}
+
+#box4 .left {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+
+/* page-3 starting box5 */
+
+#box5 {
+    height:930px;
+    width:100%;
+    background:#000000;
+    position: absolute;
+    top:61.2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#box5 h1{
+    color:#fff;
+    font-weight: bolder;
+    margin-top:5%;
+    margin-bottom:2%;
+    font-size:3rem;
+    font-weight: bolder;
+}
+
+#box5 .texxt{
+    width:80%;
+    height:72px;
+    background:rgba(255, 255, 255, 0.2);
+    color:#fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0px 25px 0px 25px;
+    margin-bottom:1%
+}
+
+#box5 .texxt p{
+    position: relative;
+    top:-15px;
+    font-size: 1.5rem;
+}
+
+#box5 .texxt ion-icon{
+    font-size: 3rem;
+}
+
+#box5 p{
+    color:#fff;
+    margin-top:2rem;
+    font-size:1.25rem
+}
+
+#box5 #buttonss{
+    margin-top:25px;
+    display: flex;
+    gap:8px;
+}
+
+#input-box {
+    height: 56px;
+    width: 375px;
+    position: relative;
+}
+
+#input-box #email {
+    height: 56px;
+    width: 375px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-left: 17px;
+    font-size: 15px;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#input-box #email:focus,
+#input-box #email:valid {
+    border-color: #fff;
+}
+
+#input-box label {
+    position: absolute;
+    top: 30%;
+    color: #fff;
+    left: 5%;
+    font-size: 17px;
+    opacity: 0.9;
+    transition: 0.5s ease;
+}
+
+#input-box #email:focus~label,
+#input-box #email:valid~label {
+    top: 15%;
+    font-size: 13px;
+}
+
+#box5 #get-started {
+    width: 203px;
+    height: 56px;
+    color: #fff;
+    background: rgb(299, 9, 20);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 24px;
+    position: relative;
+}
+
+#get-started ion-icon {
+    font-size: 25px;
+    position: relative;
+    top: 3px
+}
+
+/* page-3 starting box6 */
+
+#box6 {
+    height:369px;
+    width:100%;
+    background:#000000;
+    position: absolute;
+    top:89%;
+    color:rgba(255, 255, 255, 0.7);
+    padding-left:10%;
+    padding-top: 3%;
+}
+
+#box6 footer #questions{
+    height: auto;
+    width: 80%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-decoration: underline;
+    margin:15px 0 15px 0;
+}
+
+#box6 footer #questions p{
+    margin-bottom:10px;
+}
+
+#box6 select {
+    height: 32px;
+    width: 122px;
+    text-align: center;
+    background: none;
+    color: #fff;
+    border-radius:5px;
+    margin-bottom:20px;
+}
+
+#box6 select:focus {
+    background-color: #fff;
+    color: #000;
+}
