@@ -6,7 +6,34 @@ const lines = document.querySelector(".lines");
 const page1 = document.querySelector("#page-1");
 const page2 = document.querySelector("#page-2");
 const page3 = document.querySelector("#pages");
-const email = document.querySelector("#email");
+const email = document.querySelector("#m-email");
+const me = document.querySelector("#me");
+const semail = document.querySelector("#s-email");
+const se = document.querySelector("#se");
+//texxt1
+const texxt1 = document.querySelector("#texxt1");
+const icon1 = document.querySelector("#icon1");
+const dropbox1 = document.querySelector("#dropbox1");
+//texxt2
+const texxt2 = document.querySelector("#texxt2");
+const icon2 = document.querySelector("#icon2");
+const dropbox2 = document.querySelector("#dropbox2");
+//texxt3
+const texxt3 = document.querySelector("#texxt3");
+const icon3 = document.querySelector("#icon3");
+const dropbox3 = document.querySelector("#dropbox3");
+//texxt4
+const texxt4 = document.querySelector("#texxt4");
+const icon4 = document.querySelector("#icon4");
+const dropbox4 = document.querySelector("#dropbox4");
+//texxt5
+const texxt5 = document.querySelector("#texxt5");
+const icon5 = document.querySelector("#icon5");
+const dropbox5 = document.querySelector("#dropbox5");
+//texxt6
+const texxt6 = document.querySelector("#texxt6");
+const icon6 = document.querySelector("#icon6");
+const dropbox6 = document.querySelector("#dropbox6");
 
 //make reverse animation trigger
 setTimeout(()=>{
@@ -51,15 +78,6 @@ setTimeout(() => {
   transitionToPage2();
 }, 4100);
 
-// email.addEventListener("input", () => {
-//   if (email.value) {
-//     email.style.backgroundColor = "rgba(255,255,255,0.1)";
-//     email.style.borderRadius = "5px"
-//   } else {
-//     email.style.backgroundColor = "rgba(255,255,255,0.1)";
-//     email.style.borderRadius = "5px"
-//   }
-// });
 
 const colors = [
   "#FF5733",
@@ -103,3 +121,159 @@ colors.map((color)=>{
   line.style.setProperty('--c', color);
   lines.appendChild(line)
 })
+
+function checkInputs() {
+    if(email.value.trim() === ""){
+        me.style.display = "block";
+    }else{
+        me.style.display = "none";
+    }
+}
+
+email.addEventListener('input',checkInputs)
+checkInputs()
+
+function checkinputs() {
+  if(semail.value.trim() === ""){
+    se.style.display = "block"
+  }else{
+    se.style.display = "none"
+  }
+}
+
+semail.addEventListener('input',checkinputs)
+checkinputs()
+
+//all transitions of texxt1
+texxt1.addEventListener('click',()=>{
+  rotate1();
+  visible1();
+})
+
+function rotate1(){
+  if(icon1.style.transform === "rotate(-45deg)"){
+    icon1.style.transform = "rotate(0deg)"
+  }else{
+    icon1.style.transform = "rotate(-45deg)"
+  }
+}
+
+function visible1(){
+  if(dropbox1.style.display === "block"){
+    dropbox1.style.display = "none"
+  }else{
+    dropbox1.style.display = "block"
+  }
+}
+
+//all transitions of texxt2
+texxt2.addEventListener('click',()=>{
+  rotate2();
+  visible2()
+})
+
+function rotate2(){
+  if(icon2.style.transform === "rotate(-45deg)"){
+    icon2.style.transform = "rotate(0deg)"
+  }else{
+    icon2.style.transform = "rotate(-45deg)"
+  }
+}
+
+function visible2(){
+  if(dropbox2.style.display === "block"){
+    dropbox2.style.display = "none"
+  }else{
+    dropbox2.style.display = "block"
+  }
+}
+
+//all transitions of texxt3
+texxt3.addEventListener('click',()=>{
+  rotate3();
+  visible3();
+})
+
+function rotate3(){
+  if(icon3.style.transform === "rotate(-45deg)"){
+    icon3.style.transform = "rotate(0deg)"
+  }else{
+    icon3.style.transform = "rotate(-45deg)"
+  }
+}
+
+function visible3(){
+  if(dropbox3.style.display === "block"){
+    dropbox3.style.display = "none"
+  }else{
+    dropbox3.style.display = "block"
+  }
+}
+
+//all transitions of texxt4
+texxt4.addEventListener('click',()=>{
+  rotate4();
+  visible4();
+})
+
+function rotate4(){
+  if(icon4.style.transform === "rotate(-45deg)"){
+    icon4.style.transform = "rotate(0deg)"
+  }else{
+    icon4.style.transform = "rotate(-45deg)"
+  }
+}
+
+function visible4(){
+  if(dropbox4.style.display === "block"){
+    dropbox4.style.display = "none"
+  }else{
+    dropbox4.style.display = "block"
+  }
+}
+
+
+//all transitions of texxt5
+texxt5.addEventListener('click',()=>{
+  rotate5();
+  visible5();
+})
+
+function rotate5(){
+  if(icon5.style.transform === "rotate(-45deg)"){
+    icon5.style.transform = "rotate(0deg)"
+  }else{
+    icon5.style.transform = "rotate(-45deg)"
+  }
+}
+
+function visible5(){
+  if(dropbox5.style.display === "block"){
+    dropbox5.style.display = "none"
+  }else{
+    dropbox5.style.display = "block"
+  }
+}
+
+
+//all transitions of texxt6
+texxt6.addEventListener('click',()=>{
+  rotate6();
+  visible6();
+})
+
+function rotate6(){
+  if(icon6.style.transform === "rotate(-45deg)"){
+    icon6.style.transform = "rotate(0deg)"
+  }else{
+    icon6.style.transform = "rotate(-45deg)"
+  }
+}
+
+function visible6(){
+  if(dropbox6.style.display === "block"){
+    dropbox6.style.display = "none"
+  }else{
+    dropbox6.style.display = "block"
+  }
+}

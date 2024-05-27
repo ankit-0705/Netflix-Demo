@@ -4,7 +4,6 @@
     box-sizing: border-box;
     scrollbar-width: thin;
     font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
-    /* scroll-behavior: smooth; */
 }
 
 /* page-1 starting */
@@ -261,13 +260,18 @@
     height: 32px;
     width: 76px;
     position: relative;
-    right: -50%;
+    right:-390px;
     background: rgb(299, 9, 20);
     border: none;
     border-radius: 5px;
     color: #fff;
     font-weight: bold;
     cursor: pointer;
+    transition: 0.5s;
+}
+
+#right1 input:hover{
+    opacity: 0.9;
 }
 
 #page-2 main {
@@ -300,13 +304,14 @@
     gap: 7px;
 }
 
-#input-box {
+
+#page-2 #input-box {
     min-height: 56px;
     min-width: 375px;
     position: relative;
 }
 
-#input-box #email {
+#page-2 #input-box #m-email {
     height: 56px;
     width: 375px;
     background: rgba(255, 255, 255, 0.1);
@@ -314,31 +319,33 @@
     border-radius: 5px;
     padding-top: 10px;
     padding-left: 17px;
-    font-size: 15px;
-    color: #fff;
-    font-size: 13px;
+    font-size:16px;
+    color:#fff;
     font-weight: 600;
 }
 
-#input-box #email:focus,
-#input-box #email:valid {
+#page-2 #input-box #m-email:focus,
+#page-2 #input-box #m-email:valid {
     border-color: #fff;
 }
 
-#input-box label {
+#page-2 #input-box label {
     position: absolute;
     top: 30%;
-    color: #fff;
+    color:#fff;
     left: 5%;
     font-size: 17px;
     opacity: 0.9;
     transition: 0.5s ease;
+    display: flex;
+    pointer-events:none;
 }
 
-#input-box #email:focus~label,
-#input-box #email:valid~label {
-    top: 15%;
-    font-size: 13px;
+#page-2 #input-box #m-email:focus~label,
+#page-2 #input-box #m-email:valid~label {
+    top:0;
+    font-size:13px;
+    opacity: 0.75;
 }
 
 #page-2 #get-started {
@@ -352,10 +359,12 @@
     font-size: 24px;
     position: relative;
     top: 5px;
+    transition: 0.5s;
 }
 
-#page-2 #get-started:disabled{
-    background-color: rgba(255, 255, 255, 0.3);
+#get-started:hover{
+    opacity: 0.85;
+    cursor: pointer;
 }
 
 #get-started ion-icon {
@@ -363,6 +372,7 @@
     position: relative;
     top: 3px
 }
+
 
 /* page-3 starting */
 
@@ -651,7 +661,24 @@
     align-items: center;
     justify-content: space-between;
     padding:0px 25px 0px 25px;
-    margin-bottom:1%
+    margin-bottom:1%;
+    transition: 0.5s;
+}
+
+.dropbox{
+    background:rgba(255, 255, 255, 0.2);
+    color:#fff;
+    width:80%;
+    position: relative;
+    top:-13px;
+    font-size: 1.5rem;
+    padding: 24px;
+    display: none;
+}
+
+#box5 .texxt:hover{
+    background-color: rgba(255, 255, 255, 0.27);
+    cursor: pointer;
 }
 
 #box5 .texxt p{
@@ -662,6 +689,7 @@
 
 #box5 .texxt ion-icon{
     font-size: 3rem;
+    transition: 0.15s;
 }
 
 #box5 p{
@@ -676,13 +704,13 @@
     gap:8px;
 }
 
-#input-box {
+#buttonss #input-box {
     height: 56px;
     width: 375px;
     position: relative;
 }
 
-#input-box #email {
+#buttonss #input-box #s-email {
     height: 56px;
     width: 375px;
     background: rgba(255, 255, 255, 0.1);
@@ -692,30 +720,28 @@
     padding-left: 17px;
     font-size: 15px;
     color: #fff;
-    font-size: 13px;
     font-weight: 600;
 }
 
-#input-box #email:focus,
-#input-box #email:valid {
+#buttonss #input-box #s-email:focus~label,
+#buttonss #input-box #s-email:valid~label {
     border-color: #fff;
+    top:0;
+    font-size:13px;
+    opacity: 0.75;
 }
 
-#input-box label {
+#buttonss #input-box label {
     position: absolute;
     top: 30%;
-    color: #fff;
+    color:#fff;
     left: 5%;
     font-size: 17px;
     opacity: 0.9;
     transition: 0.5s ease;
+    pointer-events: none;
 }
 
-#input-box #email:focus~label,
-#input-box #email:valid~label {
-    top: 15%;
-    font-size: 13px;
-}
 
 #box5 #get-started {
     width: 203px;
